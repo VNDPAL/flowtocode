@@ -12,8 +12,19 @@ export class AppComponent {
     | undefined;
 
   title = 'flowtocode';
+  diagm: any;
+
   convert() {
-    var a = this.diagram?.instance.export();
-    console.log(a);
+    this.diagm = this.diagram?.instance.export();
+    console.log(this.diagm);
+  }
+
+  restore() {
+    this.diagram?.instance.import(this.diagm);
+  }
+
+  click(val:any){
+    console.log(val);
+    alert(val.item.text);
   }
 }

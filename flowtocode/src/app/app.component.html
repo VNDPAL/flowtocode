@@ -1,2 +1,32 @@
-<dx-diagram #diagram id="diagram"></dx-diagram>
+<dx-diagram #diagram id="diagram" (onItemDblClick)="click($event)">
+    <dxi-custom-shape
+        category="employees"
+        type="myType"
+        baseType="rectangle"
+        defaultText="RectangeBox"
+        [allowEditText]="true">
+    </dxi-custom-shape>
+    <dxi-custom-shape
+        category="employees"
+        type="myType1"
+        baseType="decision"
+        defaultText="decision"
+        [allowEditText]="true">
+    </dxi-custom-shape>
+    <dxi-custom-shape 
+    category="employees"
+    type="roundedRect"
+    title="Rounded Rectangle"
+    backgroundImageUrl="images/shapes/roundedRect.svg"
+    [defaultWidth]="0.75"
+    [defaultHeight]="0.5"
+    defaultText="Text"
+    [textTop]="0.35"
+    [textHeight]="0.3">
+</dxi-custom-shape>
+    <dxo-toolbox>
+        <dxi-group category="employees" title="Stensils" displayMode="texts"></dxi-group>
+    </dxo-toolbox>
+</dx-diagram>
 <button (click)="convert()">Convert to C# code</button>
+<button (click)="restore()">Restore</button>
